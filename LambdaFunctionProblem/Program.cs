@@ -19,7 +19,7 @@ namespace LambdaFunctionProblem
             SearchName(list,"Raja");
             RemovePersn(list, "Pavan");
         }
-        public static void AddPersonIntoList(List<Lambda> list)
+        public static void AddPersonIntoList(List<Lambda> list)//Adding the persons to a list
         {
             list.Add(new Lambda() { Address = "Abc", Age = 12, PhoneNumber = 123456789, Name = "Raja" });
             list.Add(new Lambda() { Address = "def", Age = 50, PhoneNumber = 0128894483, Name = "Prabha" });
@@ -35,26 +35,26 @@ namespace LambdaFunctionProblem
                Console.WriteLine("Name:{0} \t Phonenumber:{1} \t Age={2} \t Address={3}",lambda.Name,lambda.PhoneNumber,lambda.Age,lambda.Address);
             }
         }
-        public static void TopTwoAgelessThanSixty(List<Lambda> list)
+        public static void TopTwoAgelessThanSixty(List<Lambda> list)//Top persons based on their age
         {
             Console.WriteLine();
             Console.WriteLine("Top 2 records based on Age less than 60");
             var topTwoRecords=list.Where(p=>p.Age<60).OrderBy(p=>p.Age).Take(2).ToList();
             Display(topTwoRecords);
         }
-        public static void TeenAgeResult(List<Lambda> list)
+        public static void TeenAgeResult(List<Lambda> list)//to get less than 13 years old details
         {
             var teenAge=list.FindAll(p=>p.Age>=13 && p.Age<=20).ToList();
             Console.WriteLine("Teen Age persons in a list");
             Display(teenAge);
         }
-        public static void AverageAge(List<Lambda> list)
+        public static void AverageAge(List<Lambda> list)//To get the Average age of persons
         {
             Console.WriteLine("Average Age in list ");
             double result=list.Average(p=>p.Age);
             Console.WriteLine(result);
         }
-        public static void SearchName(List<Lambda>list,string name)
+        public static void SearchName(List<Lambda>list,string name)//this is for a particular is present in list or not
         {
             Console.WriteLine("Search For a particular Name");
             var result=list.FindAll(p=>p.Name==name);
@@ -67,7 +67,7 @@ namespace LambdaFunctionProblem
                 Console.WriteLine("Employee is not present");
             }
         }
-        public static void RemovePersn(List<Lambda>list,string name)
+        public static void RemovePersn(List<Lambda>list,string name)//Remove the particular person from the list
         {
             var result = list.RemoveAll(p => p.Name == name);
             if(result != 0)
